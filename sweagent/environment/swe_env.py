@@ -2,7 +2,8 @@ import asyncio
 import logging
 import shlex
 from pathlib import PurePath
-from typing import Literal, Self
+# from typing import Literal, Self
+from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 from swerex.deployment.abstract import AbstractDeployment
@@ -67,7 +68,7 @@ class SWEEnv:
             self.add_hook(hook)
 
     @classmethod
-    def from_config(cls, config: EnvironmentConfig) -> Self:
+    def from_config(cls, config: EnvironmentConfig):
         """Create an environment instance from a configuration object.
         This is the recommended way to create an environment instance, unless you need
         more flexibility.
