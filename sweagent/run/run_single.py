@@ -30,7 +30,7 @@ Here's an example that uses [bold][cyan]modal[/bold][/cyan] instead of docker an
 import getpass
 import sys
 from pathlib import Path
-from typing import Self
+# from typing import Self
 
 import yaml
 from pydantic import BaseModel, ConfigDict, Field
@@ -150,7 +150,7 @@ class RunSingle:
         return self._chooks.hooks
 
     @classmethod
-    def from_config(cls, config: RunSingleConfig) -> Self:
+    def from_config(cls, config: RunSingleConfig):
         load_environment_variables(config.env_var_path)
         config.set_default_output_dir()
         config.output_dir.mkdir(parents=True, exist_ok=True)
